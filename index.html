@@ -29,17 +29,17 @@
               <input type="text" id="fname" name="phone No" placeholder="Phone No..">
               <label for="fname">ZIP Code</label>
               <input type="text" id="fname" name="zipcode" placeholder="zipcode..">
-              <label for="country">Select Item</label>
-              <select id="country" name="color">
+              <label for="selectitem">Select Item</label>
+              <select id="selectitem" name="color">
                 <option value="australia">Super Power</option>
-                <option value="canada">Anti Allergy Tablet</option>
-                <option value="usa">Acidol</option>
-                <option value="australia">Fevorina P</option>
-                <option value="canada">Cardial plus</option>
-                <option value="usa">Stone Solvent</option>
-                <option value="australia">Anti Flu</option>
-                <option value="canada">Mouth Ulcer</option>
-                <option value="usa">Anti Allergy Syrup</option>
+                <option value="antiallergy Tablet">Anti Allergy Tablet</option>
+                <option value="acidol">Acidol</option>
+                <option value="aevorina ">Fevorina P</option>
+                <option value="cardial">Cardial plus</option>
+                <option value="stonesolvent">Stone Solvent</option>
+                <option value="antiflu">Anti Flu</option>
+                <option value="mouthulcer">Mouth Ulcer</option>
+                <option value="allergysirup">Anti Allergy Syrup</option>
               </select>
               
               <input type="submit" value="Submit">
@@ -54,13 +54,13 @@
         $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbw0F0gCOM8K66FnGYuygkwI-LNLeLuQ7xxEwuecKlh1aFKXRgtuOHszT1owM_KaMsAg/exec",
+                url:"https://script.google.com/macros/s/AKfycbxkXAD34SMhxhPxLgmQnWw_XCYOxpBLj-QYDFsTBgzdT7i4-hmvSV89VH4mT1QP7UUN/exec",
                 data:$("#submit-form").serialize(),
                 method:"post",
                 success:function (response){
                    // alert("Form submitted successfully")
                    // window.location.reload()
-                    window.location.href="https://drnasar.github.io/myshop/"
+                    window.location.href="https://script.google.com/macros/s/AKfycbzmhmrFA8x35GJrc-i4EUPFNHtg0yR78I1pnEKP2KPT4wm9WWyQ1RGWM3nYBL7_X5Jr/exec"
                 },
                 error:function (err){
                     alert("Something Error")
