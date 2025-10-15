@@ -54,13 +54,13 @@
         $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbylkfTH1TaJIDF9rFmPOGgaJDNPGm25y76t95R_7Mor7PNQv1srkjWRWiG8oAdxrZSk/exec",
+                url:"https://script.google.com/macros/s/AKfycbxLsHWMdjJ04Uc7Lwz8njJIG0oiCiSHvDeYZ6MRNNDPxflNZyWSPVAs05HTN-oQIzRJ/exec",
                 data:$("#submit-form").serialize(),
                 method:"post",
                 success:function (response){
                    // alert("Form submitted successfully")
                    // window.location.reload()
-                    window.location.href="https://script.google.com/macros/s/AKfycbzmhmrFA8x35GJrc-i4EUPFNHtg0yR78I1pnEKP2KPT4wm9WWyQ1RGWM3nYBL7_X5Jr/exec"
+                    window.location.href="https://script.google.com/macros/s/AKfycbyYdeKmxBKAqlF7Cn5iwo0Tjuuc-T2kjj4LrPRwA6W3zRQPLnGbW1fKb_zfSsfkxcSf/exec"
                 },
                 error:function (err){
                     alert("Something Error")
