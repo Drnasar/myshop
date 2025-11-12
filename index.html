@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Myshop</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div style="text-align:center">
-          <h2>Contact Us</h2>
-          <p>Swing by for a cup of coffee, or leave us a message:</p>
+          <h2>Order Now</h2>
+          <p>Plece fill your from and submit  </p>
         </div>
         <div class="row">
           
@@ -19,16 +19,11 @@
             <form id="submit-form" action="">
               <label for="fname">First Name</label>
               <input type="text" id="fname" name="name" placeholder="Your name..">
-              <label for="lname">Email</label>
-              <input type="text" id="lname" name="email" placeholder="Email..">
               <label for="fname">Place</label>
-              <input type="text" id="fname" name="place" placeholder="Place..">
-              <label for="fname">Address</label>
-              <input type="text" id="fname" name="address" placeholder="Address..">
-              <label for="fname">Phone No</label>
-              <input type="text" id="fname" name="phone No" placeholder="Phone No..">
-              <label for="fname">ZIP Code</label>
-              <input type="text" id="fname" name="zipcode" placeholder="zipcode..">
+              <input type="text" id="fname" name="place" placeholder="Your place..">
+              <label for="lname">Phone No</label>
+              <input type="text" id="lname" name="Phone" placeholder="Your phone no..">
+              <label for="subject">Address</label>
               <label for="selectitem">Select Item</label>
               <select id="selectitem" name="color">
                 <option value="australia">Super Power</option>
@@ -42,11 +37,12 @@
                 <option value="allergysirup">Anti Allergy Syrup</option>
               </select>
               
+              <textarea id="subject" name="Address" placeholder="Write Address.." style="height:170px"></textarea>
               <input type="submit" value="Submit">
             </form>
           </div>
           <div class="column">
-            <img src="crossroads.png" style="width:100%">
+            <img src="super.jpg" style="width:100%">
           </div>
         </div>
       </div>
@@ -54,13 +50,13 @@
         $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbyzerLiL1aKqSEkolnA-YfUIiz0w5NEnO3Fgeik6hRx8OYStLj98uCw5NAnNxyXB7Tz/exec",
+                url:"https://script.google.com/macros/s/AKfycbyCuLTtYhUHu8uQer54aARRocx48txBMgjmFLqRU7BvHsxrmBkP9UpytQJXkS8UZLQh9A/exec",
                 data:$("#submit-form").serialize(),
                 method:"post",
                 success:function (response){
                    // alert("Form submitted successfully")
                    // window.location.reload()
-                    window.location.href="upi://pay?pa=Q559139246@ybl&pn=Nasar&cu=INR&am=399"
+                    window.location.href="https://www.upi.me/pay?pa=drnasarmusliyar-1@oksbi&am=399"
                 },
                 error:function (err){
                     alert("Something Error")
