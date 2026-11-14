@@ -1,69 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+    <title>ഡിജിറ്റൽ പ്രൊഫൈൽ കാർഡ്</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+            height: 120px;
+            position: relative;
+        }
+
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            margin: 0 auto;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            background: #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 60px 24px 28px 24px;
+        }
+
+        .user-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .user-title {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 13px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* സേവ് കോൺടാക്റ്റ് ബട്ടൺ */
+        .btn-save {
+            background: #4f46e5;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+        .btn-save:hover {
+            background: #4338ca;
+        }
+
+        /* കോൾ ബട്ടൺ */
+        .btn-call {
+            background: #0284c7;
+            color: #ffffff;
+        }
+        .btn-call:hover {
+            background: #0369a1;
+        }
+
+        /* വാട്സാപ്പ് ബട്ടൺ */
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+        }
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+        }
+
+        /* വെബ്സൈറ്റ് ബട്ടൺ */
+        .btn-web {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+        .btn-web:hover {
+            background: #e2e8f0;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div style="text-align:center">
-          <h2>Order Now</h2>
-          <p>Plece fill your from and submit  </p>
+
+    <div class="profile-card">
+        <div class="card-header">
+            <div class="avatar-container">
+                <!-- നിങ്ങളുടെ ഫോട്ടോ മാറ്റാൻ 'src' ലിങ്ക് മാറ്റുക -->
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEids60-Y6sca7JiPZyh9srH6ot5BUrx15p_BEgXbefZgud66Yf2a7F48ywX06QVjhfE7MlSyMqesPC6ofF8fbiznnq07iYRm0m-0tQJYJC40fdvV6LNghvBDfgjyuI-PuuO_f9qzVX9JC__XURmFHGuOr_dSYIzjEiOqQ0__5egqF8pH9y7zersDsN5xGQ/s1600/WhatsApp%20Image%202026-11-04%20at%2010.07.32%20AM%20(1).jpeg" alt="Profile Picture">
+            </div>
         </div>
-        <div class="row">
-          
-          <div class="column">
-            <form id="submit-form" action="">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="name" placeholder="Your name..">
-              <label for="fname">Place</label>
-              <input type="text" id="fname" name="place" placeholder="Your place..">
-              <label for="lname">Phone No</label>
-              <input type="text" id="lname" name="Phone" placeholder="Your phone no..">
-              <label for="subject">Address</label>
-              <label for="selectitem">Select Item</label>
-              <select id="selectitem" name="color">
-                <option value="australia">Super Power</option>
-                <option value="antiallergy Tablet">Anti Allergy Tablet</option>
-                <option value="acidol">Acidol</option>
-                <option value="aevorina ">Fevorina P</option>
-                <option value="cardial">Cardial plus</option>
-                <option value="stonesolvent">Stone Solvent</option>
-                <option value="antiflu">Anti Flu</option>
-                <option value="mouthulcer">Mouth Ulcer</option>
-                <option value="allergysirup">Anti Allergy Syrup</option>
-              </select>
-              
-              <textarea id="subject" name="Address" placeholder="Write Address.." style="height:170px"></textarea>
-              <input type="submit" value="Submit">
-            </form>
-          </div>
-          <div class="column">
-            <img src="super.jpg" style="width:100%">
-          </div>
+
+        <div class="card-body">
+            <!-- പേരും പദവിയും ഇവിടെ മാറ്റുക -->
+            <h1 class="user-name">DR.ABDUL NASAR AL ARSHADI </h1>
+            <p class="user-title">B.E.H.M Phd</p>
+
+            <div class="action-buttons">
+                <!-- 1. ഫോണിലേക്ക് കോൺടാക്റ്റ് സേവ് ചെയ്യാൻ ഉള്ള ബട്ടൺ -->
+                <button class="btn btn-save" onclick="saveContact()">
+                    <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2zM5 5v14h14V8.5L15.5 5H5zm7 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-4-9h6V6H8v2z"/></svg>
+                    കോൺടാക്റ്റ് സേവ് ചെയ്യുക (Save)
+                </button>
+
+                <!-- 2. കോൾ ചെയ്യാൻ ഉള്ള ബട്ടൺ (നിങ്ങളുടെ ഫോൺ നമ്പർ നൽകുക) -->
+                <a href="tel:+919746704040" class="btn btn-call">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+                    വിളിക്കുക (Call Now)
+                </a>
+
+                <!-- 3. വാട്സാപ്പ് ബട്ടൺ (നിങ്ങളുടെ വാട്സാപ്പ് നമ്പർ നൽകുക) -->
+                <a href="https://wa.me/919746704040?text=Hello" target="_blank" class="btn btn-whatsapp">
+                    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+                    വാട്സാപ്പ് (WhatsApp)
+                </a>
+
+                <!-- 4. വെബ്സൈറ്റ് ലിങ്ക് -->
+                <a href="https://drnasar.github.io/homeoelactro/" target="_blank" class="btn btn-web">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    വെബ്സൈറ്റ് കാണുക (Website)
+                </a>
+            </div>
         </div>
-      </div>
-      <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbyCuLTtYhUHu8uQer54aARRocx48txBMgjmFLqRU7BvHsxrmBkP9UpytQJXkS8UZLQh9A/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                   // alert("Form submitted successfully")
-                   // window.location.reload()
-                    window.location.href="https://www.upi.me/pay?pa=drnasarmusliyar-1@oksbi"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
+    </div>
+
+    <script>
+        // കോൺടാക്റ്റ് ഫോണിലേക്ക് നേരിട്ട് സേവ് ചെയ്യാനുള്ള vCard കോഡ്
+        function saveContact() {
+            // നിങ്ങളുടെ വിവരങ്ങൾ ഇവിടെ നൽകുക
+            const contact = {
+                name: "DR.ABDUL NASAR AL ARSHADI",
+                phone: "+919746704040",
+                email: "drnasarmkm78@gmail.com",
+                website: "https://drnasar.github.io/homeoelactro/",
+                title: "B.E.H.M Phd"
+            };
+
+            // .vcf ഫോർമാറ്റ് നിർമ്മിക്കുന്നു
+            const vCardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                `FN:${contact.name}`,
+                `TITLE:${contact.title}`,
+                `TEL;TYPE=CELL,VOICE:${contact.phone}`,
+                `EMAIL:${contact.email}`,
+                `URL:${contact.website}`,
+                "END:VCARD"
+            ].join("\r\n");
+
+            // ഫയൽ ഡൗൺലോഡ് ആക്കാൻ ഉള്ള പ്രവർത്തനം
+            const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8;" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = url;
+            downloadLink.setAttribute("download", `${contact.name.replace(/\s+/g, '_')}.vcf`);
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(url);
+        }
     </script>
+
 </body>
 </html>
